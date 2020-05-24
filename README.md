@@ -1,6 +1,7 @@
 ## How to start
 
 * Clone or Download the project
+--
 In the project directory:
 * `npm install`
 * `yarn add expo`
@@ -13,5 +14,5 @@ In the project directory:
 * install `npm install expo-permissions`
 * start and run the development server with `expo start`
 
-- Note
+- **Note
 The app has been tested on Android platform.
