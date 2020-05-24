@@ -1,0 +1,33 @@
+{
+  "name": "UdaciCards",
+  "displayName": "UdaciCards",
+  "expo": {
+    "sdkVersion": "37.0.0",
+    "orientation": "portrait",
+    "name": "UdaciCards",
+    "slug": "UdaciCards",
+    "notification": {
+      "icon": "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-512.png"
+    },
+    "version": "1.0.0",
+    "icon": "./utils/cards.png",    
+    "ios": {
+      "bundleIdentifier": "org.udacifitness.exp",
+      "supportsTablet": true
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "android": {
+      "package": "org.udacifitness.exp"
+    },
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
