@@ -3,8 +3,23 @@ import { StyleSheet, View, Text } from 'react-native'
 import { connect } from 'react-redux'
 import TextButton from './TextButton'
 import { purple, white, red, orange, green } from '../utils/colors'
+import { removeEntry } from "../utils/api"
+import { removeDeck } from "../actions/index"
 
 class DeckDetails extends React.Component {
+
+  handleRemoveDeck = () => {
+    const { navigation, dispatch, deckId, deleteDeck } = this.props
+
+    // dispatch(removeDeck(id))
+    // navigation.goBack()
+    deleteDeck(deckId)
+    // this.props.navigation.navigate('DeckList')
+    // removeEntry(deckId)
+    removeEntry(deckId).then(() =>
+      this.props.navigation.navigate('DeckList')
+    )
+  }
 
   render() {
 
@@ -29,6 +44,10 @@ class DeckDetails extends React.Component {
             text="Start Quiz"
             color={green} />
 
+          <TextButton onPress={() => this.handleRemoveDeck(deckId)}
+            styles={styles}
+            text="Delete Deck"
+            color={red} />
         </View>
       </View>
     )
@@ -45,7 +64,10 @@ function mapStateToProps(decks, { route }) {
 
 function mapDispatchToProps(dispatch, { route, navigation }) {
   return {
-    goBack: () => navigation.goBack()
+    goBack: () => navigation.goBack(),
+    deleteDeck: (deckId) => {
+      dispatch(removeDeck(deckId))
+    }
   }
 }
 
