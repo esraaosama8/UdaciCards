@@ -1,21 +1,10 @@
-import React from 'react'
+import React from 'react';
 import { StyleSheet, View, Text } from 'react-native'
 import { connect } from 'react-redux'
 import TextButton from './TextButton'
-import { purple, white, red, orange,green } from '../utils/colors'
-import {removeEntry} from "../utils/api"
+import { purple, white, red, orange, green } from '../utils/colors'
 
 class DeckDetails extends React.Component {
-
-  handleRemoveDeck = () => {
-    const { navigation, dispatch, deckId, deleteDeck } = this.props
-
-    // dispatch(removeDeck(id))
-    // navigation.goBack()
-    // deleteDeck(deckId)
-    this.props.navigation.navigate('DeckList')
-    removeEntry(deckId)
-  }
 
   render() {
 
@@ -30,20 +19,16 @@ class DeckDetails extends React.Component {
             styles={styles}
             text="Add Card"
             color={purple} />
-        
-          <TextButton onPress={() => 
-            decks[deckId].questions.length > 0 ? 
-            this.props.navigation.navigate('QuizView', { deckId: deckId, name: decks[deckId].title })
-            :
-            this.props.navigation.navigate('QuizView', { deckId: deckId, name: decks[deckId].title })}
+
+          <TextButton onPress={() =>
+            decks[deckId].questions.length > 0 ?
+              this.props.navigation.navigate('QuizView', { deckId: deckId, name: decks[deckId].title })
+              :
+              this.props.navigation.navigate('QuizView', { deckId: deckId, name: decks[deckId].title })}
             styles={styles}
             text="Start Quiz"
             color={green} />
-  
-          <TextButton onPress={() => this.handleRemoveDeck(deckId)}
-            styles={styles}
-            text="Delete Deck"
-            color={red} />
+
         </View>
       </View>
     )
@@ -60,10 +45,7 @@ function mapStateToProps(decks, { route }) {
 
 function mapDispatchToProps(dispatch, { route, navigation }) {
   return {
-    goBack: () => navigation.goBack(),
-    deleteDeck: (deckId) => {
-      dispatch(removeDeck(deckId))
-    }
+    goBack: () => navigation.goBack()
   }
 }
 
