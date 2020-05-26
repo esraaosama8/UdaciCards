@@ -1,4 +1,4 @@
-import { RECEIVE_DECKS, ADD_DECK, ADD_CARD_TO_DECK } from '../actions'
+import { RECEIVE_DECKS, ADD_DECK, ADD_CARD_TO_DECK, REMOVE_DECK } from '../actions'
 
 function Decks(state = {}, action) {
   switch (action.type) {
@@ -32,6 +32,19 @@ function Decks(state = {}, action) {
         }
       }
 
+    // case REMOVE_DECK: {
+    //   return {
+    //     ...state,
+    //     decks: state.decks.filter(deck => deck.id !== action.id)
+    //   }
+    // }
+
+    case REMOVE_DECK: {
+      const newState = Object.assign({}, state)
+      delete newState[action.id];
+      return newState;
+    }
+    
     default:
       return state
   }
