@@ -6,8 +6,7 @@ This app was built as a project for the Udacity React Nanodegree Program and foc
 
 ## How to start
 
-* Clone or Download the project
-- In the project directory:
+* Clone or Download the project --- In the project directory:
 * `npm install`
 * `yarn add expo`
 * install `yarn add react-native-vector-icons react-native link react-native-vector-icons `
