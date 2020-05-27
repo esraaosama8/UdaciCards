@@ -18,5 +18,5 @@ This app was built as a project for the Udacity React Nanodegree Program and foc
 * install `npm install expo-permissions`
 * start and run the development server with `expo start`
 
-- Note
+## Note
 The app has been tested on Android platform.
