@@ -35,7 +35,7 @@ class NewDeck extends React.Component {
             <Text style={styles.title}>Enter the new deck's name</Text>
             <TextInput style={[styles.textinput]}
               onChangeText={(deckName) => this.setState({ deckName })}
-              value={this.state.text}
+              value={this.state.deckName}
             />
 
             <TouchableOpacity style={styles.submitButton} onPress={this.submitDeck}>
