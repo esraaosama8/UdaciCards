@@ -24,7 +24,7 @@ class NewCard extends React.Component {
             answer: '',
             correctAnswer: ''
         })
-        alert("Card Added Successfully!")
+        alert("Card Added Successfully in " + JSON.stringify(this.props.deckId) +" Deck")
         this.props.navigation.navigate('DeckList')
     }
 
