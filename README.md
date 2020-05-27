@@ -1,7 +1,12 @@
+# UdaciCards : Mobile Flashcards
+
+## Project
+
+This app was built as a project for the Udacity React Nanodegree Program and focuses on building a "Mobile Flashcards" app using [React Native](https://facebook.github.io/react-native/). The application allows a user to create a deck of flash cards, each capturing a question and answer for the deck's topic. The user can then start a quiz to test their knowledge of a particular topic.
+
 ## How to start
 
 * Clone or Download the project
---
 In the project directory:
 * `npm install`
 * `yarn add expo`
@@ -14,5 +19,5 @@ In the project directory:
 * install `npm install expo-permissions`
 * start and run the development server with `expo start`
 
-## Note
+- Note
 The app has been tested on Android platform.
