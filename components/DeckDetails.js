@@ -11,14 +11,17 @@ class DeckDetails extends React.Component {
   handleRemoveDeck = () => {
     const { navigation, dispatch, deckId, deleteDeck } = this.props
 
-    // dispatch(removeDeck(id))
-    // navigation.goBack()
-    deleteDeck(deckId)
-    // this.props.navigation.navigate('DeckList')
-    // removeEntry(deckId)
+
+    this.props.deleteDeck(deckId)
     removeEntry(deckId).then(() =>
       this.props.navigation.navigate('DeckList')
     )
+  }
+
+  shouldComponentUpdate(nextProps) {
+    if (!nextProps.deckId) {
+      this.props.navigation.navigate('DeckList')
+    }
   }
 
   render() {
