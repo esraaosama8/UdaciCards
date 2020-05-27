@@ -32,19 +32,12 @@ function Decks(state = {}, action) {
         }
       }
 
-    // case REMOVE_DECK: {
-    //   return {
-    //     ...state,
-    //     decks: state.decks.filter(deck => deck.id !== action.id)
-    //   }
-    // }
-
     case REMOVE_DECK: {
       const newState = Object.assign({}, state)
       delete newState[action.id];
       return newState;
     }
-    
+
     default:
       return state
   }
