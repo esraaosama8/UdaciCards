@@ -115,6 +115,8 @@ class QuizView extends React.Component {
                             <Text style={styles.flipButton}>Show Question</Text>
                         </TouchableOpacity>
                     }
+                    
+                    <Text style={styles.text}>Did you get the question                      "Correct" or "Incorrect" ?</Text>
 
                     <TextButton onPress={() => this.handleSubmit('correct')}
                         styles={styles}

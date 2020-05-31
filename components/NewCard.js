@@ -10,19 +10,17 @@ class NewCard extends React.Component {
     state = {
         question: '',
         answer: '',
-        correctAnswer: ''
     }
 
     submitCard() {
-        const { question, answer, correctAnswer } = this.state
+        const { question, answer } = this.state
         const deck = this.props.deckId
         const { addNewCard, goBack } = this.props
-        addCardToDeck(deck,{ question, answer, correctAnswer })
-        addNewCard({ question, answer, deck, correctAnswer })
+        addCardToDeck(deck,{ question, answer })
+        addNewCard({ question, answer, deck })
         this.setState({
             question: '',
             answer: '',
-            correctAnswer: ''
         })
         alert("Card Added Successfully in " + JSON.stringify(this.props.deckId) +" Deck")
         this.props.navigation.navigate('DeckList')
@@ -30,35 +28,32 @@ class NewCard extends React.Component {
 
     render() {
 
-        const { question, answer, correctAnswer } = this.state
+        const { question, answer } = this.state
 
         return (
 
             <KeyboardAwareScrollView>
                 <TouchableWithoutFeedback onPress={() => { Keyboard.dismiss() }}>
                     <View style={styles.container}>
+
                         <Text style={styles.title}>What's the new question?</Text>
                         <TextInput
                             style={styles.input}
                             onChangeText={(question) => this.setState({ question })}
                             value={question}
                         />
+
                         <Text style={styles.title}>What's the answer?</Text>
                         <TextInput
                             style={styles.input}
                             onChangeText={(answer) => { this.setState({ answer }) }}
                             value={answer} />
 
-                        <Text style={styles.title}>Please enter only 'Correct' or 'Incorrect' </Text>
-                        <TextInput
-                            style={styles.input}
-                            onChangeText={(correctAnswer) => this.setState({ correctAnswer })}
-                            value={correctAnswer} />
-
                         <TouchableOpacity style={styles.submitButton} onPress={this.submitCard.bind(this)}>
-                            <Text style={styles.buttonText}> Submit</Text>
+                            <Text style={styles.buttonText}>Submit</Text>
                         </TouchableOpacity>
                     </View>
+
                 </TouchableWithoutFeedback>
             </KeyboardAwareScrollView>
         )
@@ -127,8 +122,8 @@ function mapStateToProps(decks, { route }) {
 
 function mapDispatchToProps(dispatch, { navigation }) {
     return {
-        addNewCard: ({ question, answer, deck, correctAnswer }) => {
-            dispatch(addCard({ question, answer, deck, correctAnswer }))
+        addNewCard: ({ question, answer, deck }) => {
+            dispatch(addCard({ question, answer, deck }))
         },
         goBack: () => navigation.goBack(),
     }
