@@ -2,9 +2,12 @@
 
 ## Project
 
-This app was built as a project for the Udacity React Nanodegree Program and focuses on building a "Mobile Flashcards" app using [React Native](https://facebook.github.io/react-native/). The application allows a user to create a deck of flash cards, each capturing a question and answer for the deck's topic. The user can then start a quiz to test their knowledge of a particular topic.
-A snippet:
-![Deck List](https://github.com/esraaosama8/UdaciCards/blob/master/utils/snippet.jpeg)
+This app was built as a project for the Udacity React Nanodegree Program and focuses on building a "Mobile Flashcards" app using [React Native](https://facebook.github.io/react-native/). The application allows a user to create a deck of flash cards, each capturing a question and answer for the deck's topic. The user can then start a quiz to test their knowledge of a particular topic.  
+Here's some view snippets:
+![Deck List](https://github.com/esraaosama8/UdaciCards/blob/master/utils/snippet1.jpeg)  
+![Deck List](https://github.com/esraaosama8/UdaciCards/blob/master/utils/snippet2.jpeg)  
+![Deck List](https://github.com/esraaosama8/UdaciCards/blob/master/utils/snippet3.jpeg)  
+![Deck List](https://github.com/esraaosama8/UdaciCards/blob/master/utils/snippet4.jpeg)  
 
 ## How to start
 
